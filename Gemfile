@@ -45,6 +45,7 @@ group :development do
   gem 'spring'
 end
 
+<<<<<<< HEAD
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
@@ -52,3 +53,5 @@ group :test do
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'          # a useful debugging aid for user stories
 end
+=======
+>>>>>>> c880f49efbe2c3aca1552ace59020d7fd9863877
