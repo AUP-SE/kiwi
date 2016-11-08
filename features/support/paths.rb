@@ -17,8 +17,8 @@ module NavigationHelpers
       '/'
       
     when /create new page/
-    '/movies/new'
-
+    '/courses/new'
+    
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
