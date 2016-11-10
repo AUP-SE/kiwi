@@ -15,6 +15,10 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+      
+    when /create new page/
+    '/courses/new'
+    
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
@@ -35,4 +39,8 @@ module NavigationHelpers
   end
 end
 
+<<<<<<< HEAD
 World(NavigationHelpers)
+=======
+World(NavigationHelpers)
+>>>>>>> master

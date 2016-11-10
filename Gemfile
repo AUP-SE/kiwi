@@ -45,7 +45,6 @@ group :development do
   gem 'spring'
 end
 
-# add to end of Gemfile
 group :test do
   gem 'cucumber-rails', :require => false
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
