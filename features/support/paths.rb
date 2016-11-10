@@ -15,10 +15,14 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+<<<<<<< HEAD
       
     when /create new page/
     '/courses/new'
     
+=======
+
+>>>>>>> fiona1
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
