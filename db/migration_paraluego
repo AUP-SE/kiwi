@@ -19,3 +19,6 @@ def down
 end 
 
 end 
+
+http://api.rubyonrails.org/classes/ActiveRecord/ConnectionAdapters/SchemaStatements.html#method-i-add_reference 
+http://guides.rubyonrails.org/active_record_migrations.html 

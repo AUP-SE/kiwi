@@ -5,3 +5,20 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+somePeople = [
+  {:name => 'Kiana', :email => 'pianoMermaid@gmail.com', :major => 'microbiology', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3},
+  {:name => 'Bruh', :email => 'alisse@gmail.com', :major => 'IR', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3},
+  {:name => 'Liam', :email => 'whoknows@hotmail.com', :major => 'Engineering', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3},
+  {:name => "Luis", :email => 'soyfriki@gmail.com', :major => 'inglés', :CourseID1 =>7}]
+
+somePeople.each do |person|
+  User.create!(person)
+end
+
+someCourses = [
+  {:title => 'Differential Equations', :professor => 'Ruth'},
+  {:title => 'Japanese', :professor => 'Yuki'}]
+
+someCourses.each do |course|
+  Course.create!(course)
+end
