@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'welcome/index'
   get 'courses/index'
+  get 'courses/search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

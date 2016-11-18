@@ -21,4 +21,11 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
   
+  def search
+    #redirect_to '/courses/index'
+    
+  flash[:notice] = "'#{params[:q]}' was not found"
+    redirect_to '/'
+  end
+  
 end

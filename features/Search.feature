@@ -9,12 +9,12 @@ Background: Search course
   
 Scenario: Try to Search for an existent Course (happy path)
   When I fill in "Search Course" with "CS2010"
-  And I press "Search TCDb"
+  And I press "Search"
  Then I should see the the Course return
  And I should see "CS2010 has seats"
  
 Scenario: Try to Search for a nonexistent Course (sad path)
- When I fill in "Search Course" with "Course That Does Not Exist"	
-  And I press "Search TCDb"
-  Then I should be on the StudentCourses create new page
-  And I should see "'Courses That Does Not Exist' was not found in TCDb."	
+ When I fill in "Search Course" with "Courses That Does Not Exist"	
+  And I press "Search"
+  Then I should be on the homepage
+  And I should see "'Courses That Does Not Exist' was not found"	
