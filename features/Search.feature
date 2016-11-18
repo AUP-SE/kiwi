@@ -4,16 +4,16 @@ Feature: Student can add courses by searching for it in The Course Database (TCD
   I want to see  courses that match my search
 
 Background: Search course
-  Given I am on the courselist create new page
-  Then I should see "Search TCDb for a course"
+  Given I am on the homepage 
+  Then I should see "Search Course"
   
-Scenario: Try to add an existent Course (happy path)
-  When I fill in "Search Courses" with "CS2010"
+Scenario: Try to Search for an existent Course (happy path)
+  When I fill in "Search Course" with "CS2010"
   And I press "Search TCDb"
  Then I should see the the Course return
  And I should see "CS2010 has seats"
  
-Scenario: Try to add nonexistent Course (sad path)
+Scenario: Try to Search for a nonexistent Course (sad path)
  When I fill in "Search Course" with "Course That Does Not Exist"	
   And I press "Search TCDb"
   Then I should be on the StudentCourses create new page

@@ -10,3 +10,8 @@
 <% end %>
 </table>
 <br>
+<%= form_tag("/courses/search", method: "get") do %>
+  <%= label_tag(:q, "Search Course:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
