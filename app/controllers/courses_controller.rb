@@ -3,13 +3,13 @@ class CoursesController < ApplicationController
     params.require(:course).permit(:title, :coursecode, :professor, :semester)
   end
   
-  def show
+   def show
     id = params[:id] 
-    @course = Course.find(id)
+    @courses = Course.find(id)
   end
-  
+    
   def index
-    @course = Course.all
+    @courses = Course.all
   end
   
   def new
