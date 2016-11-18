@@ -10,8 +10,8 @@ Background: Search course
 Scenario: Try to Search for an existent Course (happy path)
   When I fill in "Search Course" with "CS2010"
   And I press "Search"
- Then I should see the the Course return
- And I should see "CS2010 has seats"
+  Then I should be on the courselist page
+  And I should see "CS2010"
  
 Scenario: Try to Search for a nonexistent Course (sad path)
  When I fill in "Search Course" with "Courses That Does Not Exist"	

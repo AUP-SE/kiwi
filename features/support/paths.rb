@@ -16,6 +16,8 @@ module NavigationHelpers
     when /^the home\s?page$/
       '/'
 
+    when /courselist/
+      '/courses/new'
       
     when /create new page/
     '/courses/new'
