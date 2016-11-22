@@ -1,12 +1,23 @@
 <h1> All Courses:</h1>
 <!-- = render "welcome/_index" -->
 <table>
+  <% @courses.each do |someCourses| %>
+   <tr>
+    <td><%= course.title %></td>
+    <td><%= course.professor %></td>
+    </tr>
+  <% end %>
+  
+</table>
+<br>
+<table>
   <% @courses.each do |course| %>
     <tr>
     <td><%= course.title %></td>
     <td><%= course.coursecode %></td>
     <td><%= course.professor %></td>
     </tr>
-<% end %>
+  <% end %>
+  
 </table>
 <br>
