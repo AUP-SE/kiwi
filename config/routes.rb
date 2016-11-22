@@ -7,14 +7,10 @@ Rails.application.routes.draw do
   get 'create/index'
   get 'login/index'
   get 'request/index'
-  get 'login/logedin/index'
-
+  get 'login/logedin/index' => 'login#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-  resources :about
-  resources :login do
-    resources :logedin
-  end
+
   #resources :courses, :users, :professors, :login
   
   # You can have the root of your site routed with "root"
