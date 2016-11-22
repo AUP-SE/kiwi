@@ -1,0 +1,2 @@
+class LogedinController < ActionController
+end
