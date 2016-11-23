@@ -1,6 +1,6 @@
 class CoursesController < ApplicationController
   def course_params
-    params.require(:course).permit(:title, :coursecode, :professor, :semester, :students)
+    params.require(:course).permit(:title, :coursecode, :professor, :semester)
   end
   
   def show
@@ -11,10 +11,7 @@ class CoursesController < ApplicationController
   def index
     @courses = Course.all
   end
-<<<<<<< HEAD
 
-
-=======
   
   def new
   end
@@ -25,5 +22,5 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
   
->>>>>>> master
+
 end
