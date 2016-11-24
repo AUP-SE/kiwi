@@ -1,5 +1,5 @@
 class User < ApplicationRecord::Base
-
+    has_secure_password #this is for the bcrypt password security thingy apparently. kk cool
   # When a new user is created they must create a login password
   attr_accessor :password
     
