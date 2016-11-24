@@ -1,0 +1,35 @@
+%h1 Signup
+-# = form_tag('/users', method: :post) do
+
+-# O SEA ES ESE?? = form_tag users_path do 
+
+
+
+  = label 'Name'
+  = text_field :user, 'name'
+
+  = label 'Email'
+  = text_field :email, 'email'
+  
+  
+  
+ -# what are these conventions supposed to be? referring to attributes in the controller or what??
+ -# que coño significan los colores distintos??? 
+
+
+  = submit_tag 'Create User'
+
+
+
+
+<h1>Signup!</h1>
+
+<%= form_for :user, url: '/users' do |f| %>
+
+  Name: <%= f.text_field :name %>
+  Email: <%= f.text_field :email %>
+  Password: <%= f.password_field :password %>
+  Password Confirmation: <%= f.password_field :password_confirmation %>
+  <%= f.submit "Submit" %>
+
+<% end %> 

@@ -25,6 +25,7 @@ end
 
 someCourses = [
   {:title => 'Differential Equations', :professor => 'Ruth'},
+  {:title => 'ovine studies', :professor => 'Renaldo'},
   {:title => 'Japanese', :professor => 'Yuki'}]
 
 someCourses.each do |course|
