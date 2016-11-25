@@ -3,7 +3,7 @@ class CoursesController < ApplicationController
     params.require(:course).permit(:title, :coursecode, :professor, :semester)
   end
   
-   def show
+  def show
     id = params[:id] 
     @courses = Course.find(id)
   end
@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
   def index
     @courses = Course.all
   end
+
   
   def new
   end
@@ -21,4 +22,5 @@ class CoursesController < ApplicationController
     redirect_to courses_path
   end
   
+
 end
