@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   resources :login do
     resources :logedin
   end
-  #resources :courses, :users, :professors, :login
+  resources :courses, :users, :professors, :login
   
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
