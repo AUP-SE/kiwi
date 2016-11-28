@@ -1,15 +1,12 @@
 %h1 Signup
 -# = form_tag('/users', method: :post) do
 
--# O SEA ES ESE?? = form_tag users_path do 
-
-
-
+= form_tag users_path do 
   = label 'Name'
-  = text_field :user, 'name'
+  = text_field :user, :username, 'name'
 
   = label 'Email'
-  = text_field :email, 'email'
+  = text_field :user, :email, 'email'
   
   
   
