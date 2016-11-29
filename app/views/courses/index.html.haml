@@ -9,7 +9,7 @@
   %tbody
     - @courses.each do |course|
       %tr
-        %td= link_to course.title, "#{course.id}"
+        %td= link_to "#{course.title}", users_path
         %td= "#{course.coursecode}"
         %td= "#{course.coursecode}"
         
