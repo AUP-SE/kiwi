@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
     def create()
          #0 = name, 1 = username, 2 = password, 3 = email, 4 = DOB, 5 = ac
         if user.checkvals(user_params)
-            @user = Users.create!(user_params) 
+            @users = User.create!(user_params) 
         end
     end
 
