@@ -7,12 +7,16 @@
   = csrf_meta_tags 
 
 %body
-  -#%img.logo{ :src => "/../../assets/images/kiwilogo.png", :alt => "KIWI" }
-  %h1.title KIWI
-  #main
-    - if flash[:notice]
-      #notice.message=flash[:notice]
-    - elsif flash[:warning]
-      #warning.message= flash[:warning]
+  #main-container.container-fluid
+    .row
+      #sidebar.col-xs-3
+        %h3 KIWI
+      #main-content.col-xs-6.col-md-9
+      -#%img.logo{ :src => "/../../assets/images/kiwilogo.png", :alt => "KIWI Logo" }
+      %h1.title KIWI
+      - if flash[:notice]
+        #notice.message=flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]
       
-    = yield
+      = yield

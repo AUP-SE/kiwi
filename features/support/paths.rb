@@ -19,7 +19,8 @@ module NavigationHelpers
       '/courses/index'
     when /the searchResult\s?page$/
       '/searchResult'
-      
+    when '/^login\s?index'
+      '/login/index'
     when /create new page/
     '/courses/new'
     

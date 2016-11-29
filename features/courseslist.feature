@@ -5,5 +5,4 @@ Feature: User logs in and immediately sees a list of all enrolled courses
   
 Scenario: Show courses (happy path)
   Given I am on the home page
-  Then I should see "List of courses"
-  And I should see all courses
+  Then I should see the Course title "Software Engineering"
