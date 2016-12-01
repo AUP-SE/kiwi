@@ -10,9 +10,8 @@
   #main-container.container-fluid
     .row
       #sidebar.col-xs-3
-        %h3 KIWI
+       -# %img.logo{ :src => "../../assets/images/kiwilogo.png", :alt => "KIWI Logo" }
       #main-content.col-xs-6.col-md-9
-      -#%img.logo{ :src => "/../../assets/images/kiwilogo.png", :alt => "KIWI Logo" }
       %h1.title KIWI
       - if flash[:notice]
         #notice.message=flash[:notice]
