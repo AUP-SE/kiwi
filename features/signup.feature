@@ -2,7 +2,7 @@ Feature: Anonymous person can sign up for an account
 As a student/teacher 
 I need an account to access this service
 
-Scenario: Create new user (happy path)
+Scenario: Create new user
 Given I am on the login index page
 Then I should see "Full Name"
 And I fill in "Full Name" with "Fiona Battersby"
