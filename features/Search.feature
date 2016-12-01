@@ -4,13 +4,13 @@ Feature: Student can add courses by searching for it in The Course Database (TCD
   I want to see  courses that match my search
 
 Background: Search course
-  Given I am on the homepage 
+  Given I am on the courses index page 
   Then I should see "Search Course"
   
 Scenario: Try to Search for an existent Course (happy path)
   When I fill in "Search Course" with "CS3050"
   And I press "Search"
-  Then I should be on the courselist page
+  Then I should be on the courses search page
   And I should see "CS3050"
  
 Scenario: Try to Search for a nonexistent Course (sad path)
