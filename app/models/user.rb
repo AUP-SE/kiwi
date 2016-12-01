@@ -1,4 +1,4 @@
-class User < ApplicationRecord::Base
+class User < ActiveRecord::Base
 
   # When a new user is created they must create a login password
   attr_accessor :password
@@ -19,7 +19,7 @@ class User < ApplicationRecord::Base
     def create()
          #0 = name, 1 = username, 2 = password, 3 = email, 4 = DOB, 5 = ac
         if user.checkvals(user_params)
-            @user = Users.create!(user_params) 
+            @users = User.create!(user_params) 
         end
     end
 

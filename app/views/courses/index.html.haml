@@ -1,14 +1,16 @@
-<!-- = render "welcome/_index" -->
 %h1 All Courses
+
 %table#courses
   %thead
     %tr
       %th Course Title
-      %th Course Code
+      %th Code
       %th Professor
-  %body
-  - @courses.each do |course|
-    %tr
-      %td= course.title
-      %td= course.coursecode
-      %td= course.professor
+  %tbody
+    - @courses.each do |course|
+      %tr
+        %td= link_to "#{course.title}", users_path
+        %td= "#{course.coursecode}"
+        %td= "#{course.coursecode}"
+        
+= link_to 'Add new course', new_course_path
