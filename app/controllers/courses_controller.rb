@@ -3,14 +3,19 @@ class CoursesController < ApplicationController
     params.require(:course).permit(:title, :coursecode, :professor, :semester)
   end
   
-   def show
+  def user_params
+    params.require(:name)
+  end
+  
+  def show
     id = params[:id] 
-    @courses = Course.find(id)
+    @course = Course.find(id)
   end
     
   def index
     @courses = Course.all
   end
+
   
   def new
   end
@@ -20,5 +25,4 @@ class CoursesController < ApplicationController
     flash[:notice] = "#{@course.title} was successfully created."
     redirect_to courses_path
   end
-  
 end

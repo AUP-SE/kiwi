@@ -15,7 +15,10 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-
+    when /courses\s?index/
+      '/courses/index'
+    when /the searchResult\s?page$/
+      '/searchResult'
       
     when /create new page/
     '/courses/new'
