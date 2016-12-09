@@ -5,12 +5,12 @@ Feature: Student can add courses by searching for it in The Course Database (TCD
 
 Background: Search course
   Given I am on the courses index page 
-  Then I should see "Search Course"
+  Then I should see "Search the database for a course"
   
 Scenario: Try to Search for an existent Course (happy path)
-  When I fill in "Search Course" with "CS3050"
-  And I press "Search"
-  Then I should be on the courses search page
+  When I fill in "Search Terms" with "CS3050"
+  And I press "Search Course"
+  Then I should be on the search result page
   And I should see "CS3050"
  
 Scenario: Try to Search for a nonexistent Course (sad path)
