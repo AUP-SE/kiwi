@@ -2,3 +2,8 @@
 /* for each studuent in the course write their name
 %h2
   = link_to " Users", 'users/index', class: "btn btn-lg btn-primary"
+
+%h1 Become a Helper for #{@course.title}
+%h2 Become a Helper
+    = link_to 'Users', 'users/helper', class: "btn btn-lg btn-primary"
+    

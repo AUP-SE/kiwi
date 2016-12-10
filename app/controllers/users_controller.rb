@@ -22,4 +22,13 @@ class UsersController < ApplicationController
     flash[:notice] = "#{@user.name} was successfully created."
     redirect_to users_path
   end
+  
+  def become_helper
+    #@course = Course.find(params[:course], [:c_id])
+    #@user = User.find()
+    @user = User.isHelper('true')
+    flash[:notice] = "#{@user.name} is now a helper"
+    redirect_to 'users/index'
+  end
+
 end

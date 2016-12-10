@@ -1,0 +1,6 @@
+= form_tag :action => 'become_helper' do
+    
+    = label :user, :isHelper, 'I want to become a helper!'
+    = select :user, :isHelper, [Agree!]
+    
+    = submit_tag 'Submit'
