@@ -3,9 +3,9 @@ As a student/teacher
 I need an account to access this service
 
 Scenario: Create new user
-Given I am on the login index page
-Then I should see "Sign Up"
-And I fill in "Full Name" with "Fiona Battersby"
-And I press "Sign Up"
+Given I am on the users new page
+Then I should see "Sign Up!"
+And I fill in "Name" with "Fiona Battersby"
+And I press "Submit"
 Then I should be on the course index page 
-And I should see "Congrats 'Fiona Battersby' you have successfully signed up"
+And I should see "Welcome 'Fiona Battersby'"

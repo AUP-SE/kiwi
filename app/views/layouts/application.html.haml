@@ -1,16 +1,18 @@
-%head
-  %title KIWI
-  = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  = csrf_meta_tags 
+!!!
+%html
+  %head
+    %title KIWI
+    = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags 
 
-%body
-  -#%img.logo{ :src => "/../../assets/images/kiwilogo.png", :alt => "KIWI" }
-  %h1.title KIWI
-  #main
-    - if flash[:notice]
-      #notice.message=flash[:notice]
-    - elsif flash[:warning]
-      #warning.message= flash[:warning]
+  %body
+    -#%img.logo{ :src => "/../../assets/images/kiwilogo.png", :alt => "KIWI" }
+    %h1.title KIWI
+    #main
+      - if flash[:notice]
+        #notice.message=flash[:notice]
+      - elsif flash[:warning]
+        #warning.message= flash[:warning]
       
-    = yield
+      = yield
