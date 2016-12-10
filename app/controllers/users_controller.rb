@@ -10,10 +10,11 @@ class UsersController < ApplicationController
     
   def index
     @users = User.all
+    @course = Course.find(params[:course][:c_id])
   end
 
-  
   def new
+
   end
   
   def create
