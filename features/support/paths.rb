@@ -23,6 +23,8 @@ module NavigationHelpers
     when /create new page/
     '/courses/new'
     
+    when /the CS3050 course page/
+      '/courses/:id'
     
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
