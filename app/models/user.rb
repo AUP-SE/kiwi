@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
     has_secure_password #this is for the bcrypt password security thingy apparently. kk cool
-    validates :name, :isProfessor, :email, :password, :password_digest, presence: true
+    validates :name, :isProfessor, :email, :password, :passwordConfirm, presence: true
   # When a new user is created they must create a login password
     
     #def create()
