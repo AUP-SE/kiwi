@@ -12,8 +12,9 @@ Scenario: Create new user (happy path)
     And I fill in "Password" with "I love Xaviera"
     And I fill in "Confirm Password" with "I love Xaviera"
     And I press "Submit"
+    And I should see "Welcome Fiona Battersby!"    
     Then I should be on the home page 
-    And I should see "Welcome Fiona Battersby!"
+
 
 Scenario: create new user but passwords do not match (sad path)
     Given I am on the users new page
@@ -25,8 +26,9 @@ Scenario: create new user but passwords do not match (sad path)
     And I fill in "Confirm Password" with "I love bruh"
     
     And I press "Submit"
-    Then I should be on the users new page
-    And I should see "Passwords do not match"
+    Then I should see "Passwords do not match"
+    And I should be on the users new page
+    
   
 Scenario: create new user but not fill in all the fields (sad path)
     Given I am on the users new page

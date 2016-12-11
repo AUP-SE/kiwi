@@ -7,8 +7,8 @@ class UsersController < ApplicationController
     
     
     def create
-     if user_params[:password]!=user_params[:password_digest]
-         flash[:notice] = "Passwords do not match"
+     if params[:password]!=params[:passwordConfirm]
+         flash[:notice] = "Passwords do not match; "+params[:password]+" "+params[:passwordConfirm]
          redirect_to '/signup'
      else
         user = User.create(user_params)
