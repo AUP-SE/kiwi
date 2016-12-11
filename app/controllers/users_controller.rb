@@ -7,14 +7,20 @@ class UsersController < ApplicationController
     
     
     def create
-        user = User.new(user_params)
-     if user.save
-        session[:user_id] = user.id
-        flash[:notice] = "Welcome #{user.name}!"
-        redirect_to '/'
+     if user_params[:password]!=user_params[:password_digest]
+         flash[:notice] = "Passwords do not match"
+         redirect_to '/signup'
      else
-        flash[:warning] = "Please fill in all fields."
-        redirect_to '/signup'
+        user = User.create(user_params)
+     
+        if user.save
+            session[:user_id] = user.id
+            flash[:notice] = "Welcome #{user.name}!"
+            redirect_to '/'
+        else
+            flash[:warning] = "Please fill in all fields."
+            redirect_to '/signup'
+        end
      end
     end
     
@@ -23,7 +29,7 @@ class UsersController < ApplicationController
 private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :isProfessor)
   end
 end
  

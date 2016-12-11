@@ -3,18 +3,20 @@
 = form_tag '/users' do
 
   = label :user, :name, 'Name'
-  = text_field :user, 'Name'
+  = text_field :user, 'name'
 
-  = label :user, :isProfessor, 'Are you are professor?'
-  = select :user, :isProfessor, ['Yes', 'No']
+  = label :user, :isProfessor, 'Are you a professor?'
+  -# = select :user, 'isProfessor', ['Yes', 'No']
+  = select(:user, :isProfessor, options_for_select([["Yes", true], ["No", false]]))
+
   
   = label :user, :email, 'Email'
   = text_field :user, 'email'
   
   = label :user, :password, 'Password'
-  = password_field :user, 'Password'
+  = password_field :user, 'password'
   
-  = label :user, :password_confirmation, 'Password Confirmation'
-  = password_field :user, 'Password Confirmation'
+  = label :user, :password_digest, 'Confirm Password'
+  = password_field :user, 'password_digest'
   
   = submit_tag 'Submit'
