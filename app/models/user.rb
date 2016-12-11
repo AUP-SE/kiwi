@@ -1,4 +1,4 @@
-class User < ApplicationRecord::Base
+class User < ActiveRecord::Base
 
   # When a new user is created they must create a login password
   attr_accessor :password
