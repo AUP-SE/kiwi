@@ -23,6 +23,9 @@ module NavigationHelpers
     when /create new page/
     '/courses/new'
     
+    when /the Create Help Session page/
+      '/courses/requesthelp'
+    
     when /the CS3050 course page/
       '/courses/1'
     
