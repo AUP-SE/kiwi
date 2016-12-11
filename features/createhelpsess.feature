@@ -4,7 +4,7 @@ Feature: Student can request to have a help session
     I want to request a helper to help me
     
 Scenario: Create help session request
-  Given I am on the CS3050 course page
+  Given I see CS3050 course page
   And I press "Create Help Session"
   Then I should be on the Create Help Session page
   And I should see "Topic"

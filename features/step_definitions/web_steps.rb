@@ -31,6 +31,8 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+
+
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
@@ -44,6 +46,10 @@ end
 Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
+
+When /^(?:|I )see CS3050 course page/ do 
+  course = FactoryGirl.create(:course, :c_id => 1, :coursecode => CS3050)
+end 
 
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
