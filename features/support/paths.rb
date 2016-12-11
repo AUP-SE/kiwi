@@ -23,6 +23,9 @@ module NavigationHelpers
     when /create new page/
     '/courses/new'
     
+    when /users new page/
+      '/signup'
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

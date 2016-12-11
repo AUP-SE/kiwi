@@ -4,10 +4,11 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'courses/index'
   get 'about/index'
-  get 'create/index'
-  get 'login/index'
   get 'request/index'
-  get 'login/logedin/index'
+
+  #get 'create/index'
+  #get 'login/index'
+  #get 'login/logedin/index'
   
   #the following are login/signup routes specified by the tutorial prof gave me. idk
   get '/signup' => 'users#new'
