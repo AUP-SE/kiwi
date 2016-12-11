@@ -31,6 +31,15 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+
+When /^(?:|I )am signed in as a Professor/ do 
+  user = FactoryGirl.build(:user, :isProfessor => 1)
+end 
+
+When /^(?:|I )am signed in as a Student/ do 
+  user = FactoryGirl.build(:user)
+end 
+
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
@@ -53,6 +62,7 @@ When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
 
+
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
 end
@@ -60,8 +70,6 @@ end
 When /^(?:|I )fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
   fill_in(field, :with => value)
 end
-
-
 
 When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|
   fill_in(field, :with => value)
@@ -103,6 +111,9 @@ end
 When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
 end
+
+#note to self: the following step definition is marked as causing "ambiguous match' exception with cucumber
+#but if I comment it out, I get "undefined step". so nah.
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
@@ -254,3 +265,6 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+
+
