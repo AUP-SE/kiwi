@@ -59,7 +59,7 @@ Given /^(?:|I )have courses/ do
 end 
 
 Given /^(?:|I )have professors/ do 
-  prof = FactoryGirl.create(:user, :id => 1, :email => 'pianoMermaid@gmail.com', :CourseID1 => 1,:CourseID3 => 3, :isProfessor => true)
+  prof = FactoryGirl.create(:user, :id => 1, :name => 'Kiana' ,:email => 'pianoMermaid@gmail.com', :CourseID1 => 1,:CourseID3 => 3, :isProfessor => true)
 end 
 
 
@@ -71,7 +71,7 @@ Then /^(?:|I )should sea "([^"]*)"$/ do |course|
   end
 end
 
-Then /^(?:|I )should sea "([^"]*)"$/ do |prof|
+Then /^(?:|I )should seaa "([^"]*)"$/ do |prof|
   if page.respond_to? :should
     page.should have_content(prof)
   else

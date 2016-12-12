@@ -7,4 +7,4 @@ Scenario: Show professors
   Given I have professors 
   And I am on the users professors page
   Then I should see "Name"
-  And I should sea "Kiana"
+  And I should seaa "Kiana"
