@@ -48,8 +48,16 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
 end
 
 Given /^(?:|I )have courses/ do 
-  course = FactoryGirl.create(:course, :id => 1, :coursecode => 'CS3050')
+  course = FactoryGirl.create(:course, :id => 1, :coursecode => 'CS3050', :title => "Software Engineering")
 end 
+
+Then /^(?:|I )should sea "([^"]*)"$/ do |course|
+  if page.respond_to? :should
+    page.should have_content(course)
+  else
+    assert page.has_content?(course)
+  end
+end
 
 When /^(?:|I )am CS3050 course page/ do 
   '/courses/course/'

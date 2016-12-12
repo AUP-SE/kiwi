@@ -4,6 +4,7 @@ Feature: User logs in and immediately sees a list of all enrolled courses
   I want to show all of my courses on the main page
   
 Scenario: Show courses 
-  Given I am on the courses index page
+  Given I have courses 
+  And I am on the courses index page
   Then I should see "Course Title"
-  And I should see "Software Engineering"
+  And I should sea "Software Engineering"
