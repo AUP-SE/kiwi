@@ -1,21 +1,21 @@
 !!!
 %html
-%head
-  %title KIWI
-  = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
-  = javascript_include_tag 'application', 'data-turbolinks-track' => true
-  = csrf_meta_tags 
+  %head
+    %title KIWI
+    = stylesheet_link_tag 'application', 'media' => 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags 
 
-%body
-  #main-container.container-fluid
-    .row
-      #sidebar.col-xs-3
-      =image_tag ('kiwilogo.png')
-      #main-content.col-xs-6.col-md-9
-      %h1.title KIWI
-      - if flash[:notice]
-        #notice.message=flash[:notice]
-      - elsif flash[:warning]
-        #warning.message= flash[:warning]
+  %body
+    #main-container.container-fluid
+      .row
+        #sidebar.col-xs-3
+        =image_tag ('kiwilogo.png')
+        #main
+        %h1.title KIWI
+        - if flash[:notice]
+          #notice.message=flash[:notice]
+        - elsif flash[:warning]
+          #warning.message= flash[:warning]
       
-      = yield
+        = yield

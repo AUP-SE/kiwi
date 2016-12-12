@@ -31,6 +31,15 @@ module WithinHelpers
 end
 World(WithinHelpers)
 
+
+When /^(?:|I )am signed in as a Professor/ do 
+  user = FactoryGirl.build(:user, :isProfessor => 1)
+end 
+
+When /^(?:|I )am signed in as a Student/ do 
+  user = FactoryGirl.build(:user)
+end 
+
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
@@ -45,6 +54,48 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+Given /^(?:|I )have courses/ do 
+  course = FactoryGirl.create(:course, :id => 1, :coursecode => 'CS3050', :title => "Software Engineering", :semester => "Fall 2016")
+end 
+
+Given /^(?:|I )have professors/ do 
+  prof = FactoryGirl.create(:user, :id => 1, :name => 'Kiana' ,:email => 'pianoMermaid@gmail.com', :CourseID1 => 1,:CourseID3 => 3, :isProfessor => true)
+end 
+
+
+Then /^(?:|I )should sea "([^"]*)"$/ do |course|
+  if page.respond_to? :should
+    page.should have_content(course)
+  else
+    assert page.has_content?(course)
+  end
+end
+
+Then /^(?:|I )should seaa "([^"]*)"$/ do |prof|
+  if page.respond_to? :should
+    page.should have_content(prof)
+  else
+    assert page.has_content?(prof)
+  end
+end
+
+When /^(?:|I )am CS3050 course page/ do 
+  '/courses/course/'
+end 
+
+When /^(?:|I )see CS3050 course page/ do 
+  course = FactoryGirl.create(:course, :id => 1, :coursecode => CS3050)
+end 
+
+When /^(?:|I )am on course index page/ do
+  course = FactoryGirl.build(:course, :title => "Software Engineering")
+end
+
+When /^(?:|I )see course index page/ do
+  course = FactoryGirl.build(:course, :title)
+end
+
+
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
@@ -52,6 +103,7 @@ end
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
+
 
 When /^(?:|I )follow "([^"]*)"$/ do |link|
   click_link(link)
@@ -101,6 +153,9 @@ end
 When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
   attach_file(field, File.expand_path(path))
 end
+
+#note to self: the following step definition is marked as causing "ambiguous match' exception with cucumber
+#but if I comment it out, I get "undefined step". so nah.
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
   if page.respond_to? :should
@@ -252,3 +307,6 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+
+

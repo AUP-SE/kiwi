@@ -12,5 +12,8 @@
 
   = label :course, :coursecode, 'Course Code'
   = text_field :course, 'coursecode'
+  
+  = label :course, :semester, 'Semester'
+  = select :course, 'semester', ["Fall 2016", "Spring 2017", "Fall 2017", "Spring 2018"]
 
-  = submit_tag 'Save Changes'
+  = submit_tag 'Create'
