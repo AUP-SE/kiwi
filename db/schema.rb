@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20161211214507) do
     t.integer "RequesterID"
     t.integer "HelperID"
     t.integer "CourseID"
-    t.datetime 'created_at'
   end
 
   create_table "professors", force: :cascade do |t|
