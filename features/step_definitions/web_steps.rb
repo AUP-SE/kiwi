@@ -55,7 +55,7 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
 end
 
 Given /^(?:|I )have courses/ do 
-  course = FactoryGirl.create(:course, :id => 1, :coursecode => 'CS3050', :title => "Software Engineering")
+  course = FactoryGirl.create(:course, :id => 1, :coursecode => 'CS3050', :title => "Software Engineering", :semester => "Fall 2016")
 end 
 
 Then /^(?:|I )should sea "([^"]*)"$/ do |course|
