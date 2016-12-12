@@ -54,6 +54,35 @@ Given /^(?:|I )am on (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+Given /^(?:|I )have courses/ do 
+  course = FactoryGirl.create(:course, :id => 1, :coursecode => 'CS3050', :title => "Software Engineering", :semester => "Fall 2016")
+end 
+
+Then /^(?:|I )should sea "([^"]*)"$/ do |course|
+  if page.respond_to? :should
+    page.should have_content(course)
+  else
+    assert page.has_content?(course)
+  end
+end
+
+When /^(?:|I )am CS3050 course page/ do 
+  '/courses/course/'
+end 
+
+When /^(?:|I )see CS3050 course page/ do 
+  course = FactoryGirl.create(:course, :id => 1, :coursecode => CS3050)
+end 
+
+When /^(?:|I )am on course index page/ do
+  course = FactoryGirl.build(:course, :title => "Software Engineering")
+end
+
+When /^(?:|I )see course index page/ do
+  course = FactoryGirl.build(:course, :title)
+end
+
+
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end

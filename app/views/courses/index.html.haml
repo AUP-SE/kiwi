@@ -1,6 +1,9 @@
 -# = render "welcome/_index"
 %h1 All Courses
 
+= link_to "create new Kiwi course", courses_create_path
+
+
 %table#courses
   %thead
     %tr
@@ -10,7 +13,8 @@
   %tbody
     - @courses.each do |course|
       %tr
-        %td= link_to course.title, "#{course.id}"
-        %td= link_to course.coursecode, "#{course.coursecode}"
-        %td= link_to course.professor, "#{course.coursecode}"
+        %td= link_to "#{course.title}", users_path(:course => { :c_id => course.id})
+        %td= "#{course.coursecode}"
+        %td= "#{course.professor}"
         
+= link_to 'Add new course', new_course_path
