@@ -10,7 +10,7 @@
     #main-container.container-fluid
       .row
         #sidebar.col-xs-3
-        =image_tag ('kiwilogo.png')
+        =image_tag "kiwilogo.png", :class => "size"
         #main
         %h1.title KIWI
         - if flash[:notice]
