@@ -15,14 +15,7 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-    when /courses\s?index/
-      '/courses/index'
-    when /the searchResult\s?page$/
-      '/searchResult'
-      
-    when /create new page/
-    '/courses/new'
-    
+
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
