@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'login/index'
   get 'request/index'
   get 'login/logedin/index'
+  get 'users/professors'
   
   get '/courses/create' => 'courses#new'
   post '/courses/create/' => 'courses#create'
