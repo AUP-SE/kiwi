@@ -40,6 +40,11 @@ When /^(?:|I )am signed in as a Student/ do
   user = FactoryGirl.build(:user)
 end 
 
+When /I have a user with email areivax@gmail.com and password ThisIsMyPassword/ do
+  user = FactoryGirl.build(:user, :password => "ThisIsMyPassword", :email => "areivax@gmail.com")
+end
+
+
 # Single-line step scoper
 When /^(.*) within (.*[^:])$/ do |step, parent|
   with_scope(parent) { When step }
