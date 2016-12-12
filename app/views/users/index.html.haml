@@ -1,16 +1,15 @@
-%h1 Users for Course:
 %table#users
   %thead
+    %th Names
   %tbody
     - @id = @course.id
     - @c = Course.find(@id)
     - @c_name = @c.title
-    %h1 "#{@c_name}"
-    %tr
-    - @users.each do |user|
-      %tr
-      - if (user.CourseID1.equal?(@course.id) || user.CourseID2.equal?(@course.id) || user.CourseID3.equal?(@course.id) || user.CourseID4.equal?(@course.id))
-        %td= "#{user.name}"
+     %tr
+      - @users.each do |user|
+        %tr
+        - if (user.CourseID1.equal?(@course.id) || user.CourseID2.equal?(@course.id) || user.CourseID3.equal?(@course.id) || user.CourseID4.equal?(@course.id))
+          %td= "#{user.name}"
 
 
         

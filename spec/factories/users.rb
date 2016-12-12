@@ -1,6 +1,6 @@
 FactoryGirl.define do
     factory :user do 
-        isProfessor 'true'
+        isProfessor 
     end
     
 end

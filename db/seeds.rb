@@ -17,7 +17,7 @@ somePeople = [
   {:name => 'Kiana', :email => 'pianoMermaid@gmail.com', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3, :isProfessor => true},
   {:name => 'Bruh', :email => 'alisse@gmail.com', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3, :isProfessor => false},
   {:name => 'Liam', :email => 'whoknows@hotmail.com', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3, :isProfessor => true},
-  {:name => "Luis", :email => 'soyfriki@gmail.com', :CourseID1 =>7, :isProfessor => false}]
+  {:name => "Luis", :email => 'soyfriki@gmail.com', :CourseID1 =>16, :isProfessor => false}]
 
 somePeople.each do |person|
   User.create!(person)

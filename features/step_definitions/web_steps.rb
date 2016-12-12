@@ -63,6 +63,18 @@ Given /^(?:|I )have professors/ do
 end 
 
 
+Given /^(?:|I )have students/ do 
+  stud = FactoryGirl.create(:user, :id => 4, :name => 'Luis' ,:email => 'soyfriki@gmail.com@gmail.com', :CourseID1 => 16, :isProfessor => false)
+end 
+
+Then /^(?:|I )should seaaaa "([^"]*)"$/ do |stud|
+  if page.respond_to? :should
+    page.should have_content(stud)
+  else
+    assert page.has_content?(stud)
+  end
+end
+
 Then /^(?:|I )should sea "([^"]*)"$/ do |course|
   if page.respond_to? :should
     page.should have_content(course)
