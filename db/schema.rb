@@ -21,11 +21,12 @@ ActiveRecord::Schema.define(version: 20161211232220) do
   end
 
   create_table "helpsesses", force: :cascade do |t|
-    t.string  "topic"
-    t.string  "desc"
-    t.integer "RequesterID"
-    t.integer "HelperID"
-    t.integer "CourseID"
+    t.string   "topic"
+    t.string   "desc"
+    t.integer  "RequesterID"
+    t.integer  "HelperID"
+    t.integer  "CourseID"
+    t.datetime "created_at"
   end
 
   create_table "professors", force: :cascade do |t|
