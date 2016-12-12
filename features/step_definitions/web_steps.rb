@@ -55,6 +55,14 @@ When /^(?:|I )see CS3050 course page/ do
   course = FactoryGirl.create(:course, :id => 1, :coursecode => CS3050)
 end 
 
+When /^(?:|I )am on course index page/ do
+  course = FactoryGirl.build(:course, :title => "Software Engineering")
+end
+
+When /^(?:|I )see course index page/ do
+  course = FactoryGirl.build(:course, :title)
+end
+
 When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
