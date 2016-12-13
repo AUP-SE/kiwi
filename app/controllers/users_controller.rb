@@ -1,9 +1,25 @@
 class UsersController < ApplicationController
-    def new 
-    end 
+  
+  def show
+    id = params[:id] 
+    @user = User.find(id)
+  end
     
-    def show
-    end
+  def index
+    @users = User.all
+    @course = Course.find(params[:course][:c_id])
+  end
+  
+  def professors
+    @users = User.all
+  end
+
+  def new
+
+  end
+  
+
+
     
     def create 
         user = User.new(user_params)

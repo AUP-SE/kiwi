@@ -1,10 +1,11 @@
 Feature: login
-  As a user (prof or student) so that I can see my account and the rest of everything else. 
+  as a user of Kiwi
+  I want to use my account
   
 Background: 
   Given I am on the home page
-  Then I should see "Sign in"
-  When I press "Sign in"
+  Then I should see "Login"
+  When I follow "Login"
   Then I should be on the Login page
   
 Scenario: invalid user 

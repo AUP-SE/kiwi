@@ -1,4 +1,10 @@
 -# = render "welcome/_index"
+
+- if (is_prof(current_user) && logged_in?)
+  = link_to "create new Kiwi course", '/courses/new'
+- else
+  = link_to "request new Kiwi course", '/courses/request'
+
 %h1 All Courses
 
 %table#courses
@@ -10,7 +16,8 @@
   %tbody
     - @courses.each do |course|
       %tr
-        %td= link_to course.title, "#{course.id}"
-        %td= link_to course.coursecode, "#{course.coursecode}"
-        %td= link_to course.professor, "#{course.coursecode}"
+        %td= link_to "#{course.title}", users_path(:course => { :c_id => course.id})
+        %td= "#{course.coursecode}"
+        %td= "#{course.professor}"
+        
         

@@ -23,6 +23,9 @@ module NavigationHelpers
     when /create new page/
     '/courses/new'
     
+    when /Courses New page/
+      '/courses/create'
+    
     when /users new page/
       '/signup'
       
