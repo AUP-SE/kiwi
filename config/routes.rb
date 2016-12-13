@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   
+  get 'users/professors'
+
+  
 
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -9,6 +9,10 @@ class UsersController < ApplicationController
     @users = User.all
     @course = Course.find(params[:course][:c_id])
   end
+  
+  def professors
+    @users = User.all
+  end
 
   def new
 
