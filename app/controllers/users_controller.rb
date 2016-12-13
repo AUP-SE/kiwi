@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     
     def create 
         user = User.new(user_params)
-        if !(user.password=="" || user.passwordConfirm=="") && (user.password != user.passwordConfirm)
+        if user.save && !(user.password=="" || user.passwordConfirm=="") && (user.password != user.passwordConfirm)
          flash[:notice] = "Passwords do not match "
          redirect_to '/signup'
         
