@@ -14,15 +14,16 @@ courses.each do |course|
     Course.create!(course)
 end
 somePeople = [
-  {:name => 'Kiana', :email => 'pianoMermaid@gmail.com', :major => 'microbiology', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3},
-  {:name => 'Bruh', :email => 'alisse@gmail.com', :major => 'IR', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3},
-  {:name => 'Liam', :email => 'whoknows@hotmail.com', :major => 'Engineering', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3},
-  {:name => "Luis", :email => 'soyfriki@gmail.com', :major => 'inglés', :CourseID1 =>7}]
+  {:name => 'Kiana', :email => 'pianoMermaid@gmail.com', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3, :isProfessor => true},
+  {:name => 'Bruh', :email => 'alisse@gmail.com', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3, :isProfessor => false},
+  {:name => 'Liam', :email => 'whoknows@hotmail.com', :CourseID1 => 2, :CourseID2 => 1, :CourseID3 => 3, :isProfessor => true},
+  {:name => "Luis", :email => 'soyfriki@gmail.com', :CourseID1 =>7, :isProfessor => false}]
 
 somePeople.each do |person|
   User.create!(person)
 end
 
+<<<<<<< HEAD
 someCourses = [
   {:title => 'Differential Equations', :professor => 'Ruth'},
   {:title => 'ovine studies', :professor => 'Renaldo'},
@@ -31,3 +32,5 @@ someCourses = [
 someCourses.each do |course|
   Course.create!(course)
 end
+=======
+>>>>>>> list_of_all_professors

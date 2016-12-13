@@ -1,8 +1,11 @@
 -# = render "welcome/_index"
+
+- if (is_prof(current_user) && logged_in?)
+  = link_to "create new Kiwi course", '/courses/new'
+- else
+  = link_to "request new Kiwi course", '/courses/request'
+
 %h1 All Courses
-
-= link_to "create new Kiwi course", courses_create_path
-
 
 %table#courses
   %thead
@@ -17,4 +20,4 @@
         %td= "#{course.coursecode}"
         %td= "#{course.professor}"
         
-= link_to 'Add new course', new_course_path
+        

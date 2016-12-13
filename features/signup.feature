@@ -7,7 +7,7 @@ Scenario: Create new user (happy path)
     Then I should see "Sign Up!"
     And I fill in "Name" with "Fiona Battersby"
     And I fill in "Email" with "fifi@yahoo.com"
-    And I select "Yes" from "Are you a professor?"
+    And I select "No" from "Are you a professor?"
 
     And I fill in "Password" with "I love Xaviera"
     And I fill in "Confirm Password" with "I love Xaviera"
@@ -21,7 +21,7 @@ Scenario: create new user but passwords do not match (sad path)
     Then I should see "Sign Up!"
     And I fill in "Name" with "Fiona Battersby"
     And I fill in "Email" with "fifi@yahoo.com"
-    And I select "Yes" from "Are you a professor?"
+    And I select "No" from "Are you a professor?"
     And I fill in "Password" with "I love Xaviera"
     And I fill in "Confirm Password" with "I love bruh"
     
