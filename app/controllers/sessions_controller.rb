@@ -22,7 +22,6 @@ class SessionsController < ApplicationController
     # If user's login doesn't work, send them back to the login form.
       flash[:notice] = "email incorrect."
 
-
       redirect_to '/login'
     end
   end
