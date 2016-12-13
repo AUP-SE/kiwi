@@ -50,6 +50,9 @@ end
 
 When /I have a user with email areivax@gmail.com and password ThisIsMyPassword/ do
   user = FactoryGirl.build(:user, :isProfessor => true, :name => "Xav", :passwordConfirm => "ThisIsMyPassword", :password => "ThisIsMyPassword", :email => "areivax@gmail.com")
+When /I have a user with email areivax@gmail.com and password ThisIsMyPassword/ do
+  user = FactoryGirl.build(:user, :isProfessor => true, :name => "Xav", :passwordConfirm => "ThisIsMyPassword", :password => "ThisIsMyPassword", :email => "areivax@gmail.com")
+
 end
 
 
