@@ -15,13 +15,15 @@ class SessionsController < ApplicationController
       redirect_to '/'
     else
     # If user's login doesn't work, send them back to the login form.
-      flash[:notice] = "Password or email incorrect."
+      flash[:warning] = "Password or email incorrect."
       redirect_to '/login'
     end
   end
 
   def destroy
     session[:user_id] = nil
+    session[:isProfessor] = nil
+    flash[:notice] = "You have been logged out"
     redirect_to '/login'
   end
 

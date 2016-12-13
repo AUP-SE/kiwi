@@ -40,6 +40,14 @@ When /^(?:|I )am signed in as a Student/ do
   user = FactoryGirl.build(:user)
 end 
 
+When /I am logged in/ do 
+  @user = FactoryGirl.build(:user, :email => "xav@gmail.com", :password => "contraseña")
+  visit("/login")
+  fill_in("user_email", :with => @user.email)
+  fill_in("user_password", :with => @user.password)
+  click_button("Login")
+end 
+
 When /I have a user with email areivax@gmail.com and password ThisIsMyPassword/ do
   user = FactoryGirl.build(:user, :isProfessor => true, :name => "Xav", :passwordConfirm => "ThisIsMyPassword", :password => "ThisIsMyPassword", :email => "areivax@gmail.com")
 end
