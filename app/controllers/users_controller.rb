@@ -31,7 +31,7 @@ class UsersController < ApplicationController
         
         elsif user.save
             session[:user_id] = user.id
-            
+            session[:user_name]=user.name
             flash[:notice] = "Welcome #{pr} #{user.name}!"
             redirect_to '/'
         else

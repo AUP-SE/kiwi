@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+   before_action :authorize
   def course_params
     params.require(:course).permit(:title, :coursecode, :professor, :semester)
   end

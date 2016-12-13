@@ -1,9 +1,22 @@
+%h5 
+    .content.login
+    .flash
+    - flash.each do |type, message|
+        .message.notice
+        %p
+        = message
+    -if user = User.find_by(id: session[:user_id])
+        -pr = (user.isProfessor==true) ? "Pr." :""
+        =("#{@pr} #{user.name}, logged in.  ")
+        = link_to "Log out", '/logout'
+    -else
+        = link_to "Login", '/login', class: "btn btn-lg btn-primary"
+        = link_to "Sign Up", '/signup', class: "btn btn-lg btn-primary"
+    
 %h1 Welcome to the kiwi hompage
+   
 %h2
-  = link_to "About", 'about/index', class: "btn btn-lg btn-primary"
-  = link_to "Login", '/login', class: "btn btn-lg btn-primary"
-  = link_to "Sign Up", '/signup', class: "btn btn-lg btn-primary"
- 
-  = link_to "Courses", courses_path, class: "btn btn-lg btn-primary"
-  = link_to "Professors", 'users/professors', class: "btn btn-lg btn-primary"
+    = link_to "About", 'about/index', class: "btn btn-lg btn-primary"
+    = link_to "Courses", '/courses/index', class: "btn btn-lg btn-primary"
+    = link_to "Professors", 'users/professors', class: "btn btn-lg btn-primary"
 
