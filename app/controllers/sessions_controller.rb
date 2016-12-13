@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+skip_before_action :authentize
   def new
   end
 
@@ -13,13 +13,13 @@ class SessionsController < ApplicationController
       redirect_to '/'
     else
     # If user's login doesn't work, send them back to the login form.
-      redirect_to '/login'
+      redirect_to '/login', alert:"Invalid Username or password"
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to '/login'
+    redirect_to '/login', alert:"Successfilly logged out"
   end
 
 end

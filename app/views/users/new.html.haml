@@ -2,17 +2,18 @@
 %h3
 = form_tag '/users' do
 
-  = label :user, :name, 'Name'
+  = label :user, :name, 'Userame'
   = text_field :user, 'name'
-
+  %br
   = label :user, :isProfessor, 'Are you a professor?'
   -# = select :user, 'isProfessor', ['Yes', 'No']
   = select(:user, :isProfessor, options_for_select([["Yes", true], ["No", false]]))
-
+  %br
   
   = label :user, :email, 'Email'
   = text_field :user, 'email'
   
+  %br
   = label :user, :password, 'Password'
   = password_field :user, 'password'
   
