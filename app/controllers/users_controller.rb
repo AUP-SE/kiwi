@@ -1,24 +1,25 @@
 class UsersController < ApplicationController
-  skip_before_action :authorize, only: [:new, :create, :index]
-  def show
-    id = params[:id] 
-    @user = User.find(id)
-  end
+    before_action :set_user, only:[:show, :edit]
+    skip_before_action :authorize, only: [:new, :create, :index]
+    def show
+        id = params[:id] 
+        @user = User.find(id)
+    end
     
-  def index
-    @users = User.all
-    @course = Course.find(params[:course][:c_id])
-  end
-  
-  def professors
-    @users = User.all
-  end
-
-  def new
-    @user= User.new
-  end
-  
-
+    def index
+        @users = User.all
+        @course = Course.find(params[:course][:c_id])
+    end
+    
+    def professors
+        @users = User.all
+    end
+    
+    def new
+        @user= User.new
+    end
+      
+    
 
     
     def create 
@@ -62,7 +63,11 @@ class UsersController < ApplicationController
     
 
 private
-
+    
+    def set_user
+        @user = User.find(params[:id])
+    end
+    
   def user_params
     params.require(:user).permit(:name, :isProfessor, :email, :password, :passwordConfirm)
   end
