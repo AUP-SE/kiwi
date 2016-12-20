@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
      #this is for the bcrypt password security thingy apparently. kk cool
     validates :name, :email, :password, :passwordConfirm, presence: true
+    has_and_belongs_to_many :users
   # When a new user is created they must create a login password
     
     #def create()
