@@ -3,12 +3,12 @@ Feature: Create new course
   So students can access help sessions and declare absenses 
   I want to create a course on Kiwi
   
-Background:
-  Given I am on the courses page
+
 
   
 Scenario: Professor tries to create course with insufficient information (sad path)
   Given I am signed in as a Professor
+  Given I am on the courses page
   Then I should see "create new Kiwi course" 
   When I follow "create new Kiwi course"
   Then I should be on "Courses New page"
@@ -18,11 +18,14 @@ Scenario: Professor tries to create course with insufficient information (sad pa
   
 Scenario: Student tries to create course  (sad path)
   Given I am signed in as a Student
+  Given I am on the courses page
   Then I should not see "create new Kiwi course"
+  And I should see "request new Kiwi course"
 
   
 Scenario: Professor creates new course (happy path)
   Given I am signed in as a Professor
+  Given I am on the courses page
   Then I should see "create new Kiwi course" 
   When I follow "create new Kiwi course"
   Then I should be on "Courses New page"
